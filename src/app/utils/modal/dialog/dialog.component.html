@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+  <div>
+    {{ data.content }}
+  </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="primary" mat-dialog-close="true">
+    {{ data.confirmButtonLabel }}
+  </button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="false">
+    {{ data.closeButtonLabel }}
+  </button>
+</mat-dialog-actions>

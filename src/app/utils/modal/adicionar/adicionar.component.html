@@ -1,0 +1,54 @@
+<mat-card class="container">
+    <mat-card-header>
+        <mat-card-title>
+            Novo compromisso
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="eventoFormulario">
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Titulo</mat-label>
+                <input matInput  type="text" formControlName="title">
+            </mat-form-field>
+            <mat-form-field appearance="outline " class="input">
+                <mat-label>Descrição</mat-label>
+                <input matInput  type="text" formControlName="description">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Data Inicio</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="start">
+                <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Data Termino</mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName="end">
+                <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Hora Inicio</mat-label>
+                <input matInput  type="time" #time formControlName="startHour">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input">
+                <mat-label>Hora Termino</mat-label>
+                <input matInput  type="time" #time formControlName="endHour">
+            </mat-form-field>
+            <mat-form-field  [appearance]="'outline'">
+                <mat-label>Cor</mat-label>
+                <mat-select formControlName="color">
+                  <mat-option value="BLUE" > Azul </mat-option>
+                  <mat-option value="RED"> Vermelho </mat-option>
+                  <mat-option value="GREEN"> Verde </mat-option>
+                  <mat-option value="YELLOW"> Amarelo </mat-option>
+                  <mat-option value="PURPLE"> Roxo </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+        <button mat-raised-button color="warn" (click)="fecharModal()">Fechar</button>
+    </mat-card-actions>
+ 
+</mat-card>
